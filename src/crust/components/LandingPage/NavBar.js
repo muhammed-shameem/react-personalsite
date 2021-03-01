@@ -12,6 +12,7 @@ import Hidden from '@material-ui/core/Hidden';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width:'100%'
   },
   appBar:{
     color:props =>props.open?'#000000':'#ffffff',
