@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 function FirstSection() {
     const classes=useStyles();
     return(
-        <div className={classes.container}>
+        <div className={classes.container} id='home'>
           <div className={classes.bg}></div>
           <div className={classes.textShow}>
               <div>I am</div>
@@ -68,7 +68,7 @@ function FirstSection() {
               </TextLoop>
               
           </div>
-          <DownArrow />
+          <DownArrow targetDiv='about'/>
         </div>
     )
 }

@@ -95,7 +95,7 @@ function SecondSection() {
     const classes=useStyles();
 
     return(
-        <div className={classes.container}>
+        <div className={classes.container} id='about'>
             <div className={classes.firstSection}>
                 <Avatar 
                     alt="Remy Sharp" 
@@ -119,7 +119,7 @@ function SecondSection() {
                     ))}
                 </div>
             </div>
-            <DownArrow />
+            <DownArrow targetDiv=''/>
         </div>
     )
     

@@ -4,6 +4,7 @@ import Radium, {StyleRoot} from 'radium';
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import { makeStyles } from '@material-ui/core/styles';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -28,13 +29,15 @@ const styles = {
     }
   }
 
-function DownArrow() {
+function DownArrow({targetDiv}) {
     const classes=useStyles();
     return(
         <StyleRoot>
             <div style={styles.bounce} className={classes.root}>
                 <IconButton>
-                    <KeyboardArrowDownIcon className={classes.icon}/>
+                    <Link href={`#${targetDiv}`} color='inherit'>
+                        <KeyboardArrowDownIcon className={classes.icon}/>
+                    </Link>
                 </IconButton>
             </div>
         </StyleRoot>

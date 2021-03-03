@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Hidden from '@material-ui/core/Hidden';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -87,22 +88,46 @@ export default function ButtonAppBar() {
                 محمّد شميم 
                 </Typography>
                 <div className={classes.menus}>
-                    <Button color="inherit">Home</Button>
-                    <Button color="inherit">About</Button>
-                    <Button color="inherit">Education</Button>
-                    <Button color="inherit">Works</Button>
-                    <Button color="inherit">Hobbies</Button>
-                    <Button color="inherit">Contact</Button>
+                    <Button color="inherit">
+                      <Link href='#home' color='inherit'>Home</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#about' color='inherit'>About</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#' color='inherit'>Education</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#' color='inherit'>Works</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#' color='inherit'>Hobbies</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#' color='inherit'>Contact</Link>
+                    </Button>
                 </div>
             </Hidden>
             {open&&
                 <div className={classes.mobileMenus}>
-                  <Button color="inherit">Home</Button>
-                  <Button color="inherit">About</Button>
-                  <Button color="inherit">Education</Button>
-                  <Button color="inherit">Works</Button>
-                  <Button color="inherit">Hobbies</Button>
-                  <Button color="inherit">Contact</Button>
+                    <Button color="inherit">
+                      <Link href='#home' color='inherit'>Home</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#about' color='inherit'>About</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#' color='inherit'>Education</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#' color='inherit'>Works</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#' color='inherit'>Hobbies</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link href='#' color='inherit'>Contact</Link>
+                    </Button>
                 </div>
               }
         </Toolbar>
