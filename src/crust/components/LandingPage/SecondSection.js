@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     container:{
       width:'100%',
       height:'100vh',
+      position:'relative',
       backgroundColor:props=>props.darkMode?'#000000':'#ffffff',
       display:'flex',
       [theme.breakpoints.down('sm')]:{
@@ -110,7 +111,7 @@ function SecondSection({darkMode}) {
                 </Typography>
                 <Typography variant="body1" gutterBottom className={classes.about}>
                     I'm a post graduate in Computer Science.Currently I'm working as Full-Stack-Developer at Kochi.
-                    And also I'm interested in Data Science, Data Engineering, Machine Learning etc.
+                    And I'm also interested in Data Science, Data Engineering, Machine Learning etc.
                     You can see my skillset Here...
                 </Typography>
             </div>
@@ -126,7 +127,7 @@ function SecondSection({darkMode}) {
                     ))}
                 </div>
             </div>
-            <DownArrow targetDiv='' darkMode={darkMode}/>
+            <DownArrow targetDiv='contact' darkMode={darkMode}/>
         </div>
     )
     

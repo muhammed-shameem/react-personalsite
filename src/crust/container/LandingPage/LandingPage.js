@@ -6,7 +6,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import {
     NavBar,
     FirstSection,
-    SecondSection
+    SecondSection,
+    ContactSection
 } from '../../components/LandingPage';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,6 +47,7 @@ export default function LandingPage(){
                     <NavBar darkMode={darkMode} setCookie={setCookie}/>
                     <FirstSection darkMode={darkMode}/>
                     <SecondSection darkMode={darkMode}/>
+                    <ContactSection darkMode={darkMode}/>
                 </React.Fragment>
                 }
             </div>  

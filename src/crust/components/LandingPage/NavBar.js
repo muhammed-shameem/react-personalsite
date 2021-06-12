@@ -120,7 +120,7 @@ export default function ButtonAppBar({darkMode,setCookie}) {
                       <Link href='#' color='inherit'>Hobbies</Link>
                     </Button> */}
                     <Button color="inherit" className={classes.menuItem}>
-                      <Link href='#' color='inherit'>Contact</Link>
+                      <Link href='#contact' color='inherit'>Contact</Link>
                     </Button>
                 </div>
             </Hidden>
@@ -142,7 +142,7 @@ export default function ButtonAppBar({darkMode,setCookie}) {
                       <Link href='#' color='inherit'>Hobbies</Link>
                     </Button> */}
                     <Button color="inherit">
-                      <Link href='#' color='inherit'>Contact</Link>
+                      <Link href='#contact' color='inherit'>Contact</Link>
                     </Button>
                 </div>
               }
