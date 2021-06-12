@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     textShow:{
       opacity:1,
-      color:'#ffffff',
+      color:props=>props.darkMode?'#ffffff':'black',
       width:'100%',
       height:'35%',
       marginTop:'15%',
@@ -53,8 +53,8 @@ const useStyles = makeStyles((theme) => ({
     
   }));
 
-function FirstSection() {
-    const classes=useStyles();
+function FirstSection({darkMode}) {
+    const classes=useStyles({darkMode});
     return(
         <div className={classes.container} id='home'>
           <div className={classes.bg}></div>
@@ -68,7 +68,7 @@ function FirstSection() {
               </TextLoop>
               
           </div>
-          <DownArrow targetDiv='about'/>
+          <DownArrow targetDiv='about' darkMode={darkMode}/>
         </div>
     )
 }

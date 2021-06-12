@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Switch from '@material-ui/core/Switch';
 import { withStyles,makeStyles } from '@material-ui/core/styles';
 import SvgIcon from '@material-ui/core/SvgIcon';
@@ -79,12 +79,17 @@ const AntSwitch = withStyles((theme) => ({
 
 
 
-function DarkLiteModeSwitch() {
-    const [darkMode, setDarkMode] = React.useState(true);
-
+function DarkLiteModeSwitch({darkMode,setCookie}) {
+    const [on, setOn] = React.useState(darkMode);
+    useEffect(() => {
+        setOn(darkMode)
+      }, [darkMode]); 
     const classes=useStyles()
     const handleChange =()=>{
-        setDarkMode(!darkMode);
+        setCookie("darkMode", !on, {
+            path: "/",
+            expires: new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000)
+          });
     }
     return (
       <Typography component="div" className={classes.container}>
@@ -94,7 +99,7 @@ function DarkLiteModeSwitch() {
             </Grid>
             <Grid item>
                 <AntSwitch 
-                    checked={darkMode} 
+                    checked={on} 
                     onChange={handleChange} 
                 />    
             </Grid>

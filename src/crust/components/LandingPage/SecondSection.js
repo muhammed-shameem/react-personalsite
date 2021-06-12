@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     container:{
       width:'100%',
       height:'100vh',
-      backgroundColor:'#000000',
+      backgroundColor:props=>props.darkMode?'#000000':'#ffffff',
       display:'flex',
       [theme.breakpoints.down('sm')]:{
         flexDirection:'column'
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems:'center',
         paddingRight:'40px',
         paddingLeft:'40px',
-        color:'#ffffff',
+        color:props=>props.darkMode?'#ffffff':'#000000',
         [theme.breakpoints.down('sm')]:{
           width:'100%',
           height:'50%',
@@ -61,8 +61,9 @@ const useStyles = makeStyles((theme) => ({
     about:{
         fontFamily:'cursive',
         marginTop:'3%',
-        padding:10,
+        padding:'0px 10px',
         [theme.breakpoints.down('sm')]:{
+            marginTop:'1px',
             fontSize:'0.7rem'
         }
     },
@@ -92,8 +93,8 @@ const data = [
   ];
 
 
-function SecondSection() {
-    const classes=useStyles();
+function SecondSection({darkMode}) {
+    const classes=useStyles({darkMode});
 
     return(
         <div className={classes.container} id='about'>
@@ -108,19 +109,24 @@ function SecondSection() {
                     Who's this guy?
                 </Typography>
                 <Typography variant="body1" gutterBottom className={classes.about}>
-                    I'm a Front-End Developer for ChowNow in Los Angeles, CA.
-                    I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
-                    Let's make something special.
+                    I'm a post graduate in Computer Science.Currently I'm working as Full-Stack-Developer at Kochi.
+                    And also I'm interested in Data Science, Data Engineering, Machine Learning etc.
+                    You can see my skillset Here...
                 </Typography>
             </div>
             <div className={classes.SecondSection}>
                 <div className={classes.skillBarContainer}>
                     {data.map((item, idx) => (
-                        <SkillBar key={idx} skill={item.skill} bgcolor={item.bgcolor} completed={item.completed} />
+                        <SkillBar key={idx} 
+                                  skill={item.skill} 
+                                  bgcolor={item.bgcolor} 
+                                  completed={item.completed} 
+                                  darkMode={darkMode} 
+                        />
                     ))}
                 </div>
             </div>
-            <DownArrow targetDiv=''/>
+            <DownArrow targetDiv='' darkMode={darkMode}/>
         </div>
     )
     

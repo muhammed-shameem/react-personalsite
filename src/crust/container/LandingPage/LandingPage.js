@@ -1,5 +1,8 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
+import { CookiesProvider } from "react-cookie";
+import { useCookies } from "react-cookie";
 import {  makeStyles } from '@material-ui/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import {
     NavBar,
     FirstSection,
@@ -13,21 +16,39 @@ const useStyles = makeStyles((theme) => ({
       //width:'100%',
       minHeight:'100vh',
       position:'relative',
-      backgroundColor: '#000000',
+      backgroundColor:props =>props.darkMode? '#000000':'inherit',
       overflowX:'hidden'
     },
-    
+    Loading:{
+        alignSelf:'center',
+        marginTop:'auto',
+        marginBottom:'auto',
+        color:props=>props.darkMode?'white':'black'
+    }
   }));
 
 
 export default function LandingPage(){
-    const classes = useStyles();
-    
+    const [cookies, setCookie] = useCookies(["darkMode"]);
+    const darkMode=cookies?.darkMode==='false'?false:true;
+    const [isLoading,SetIsLoading]=useState(true);
+    useEffect(() => {
+        setTimeout(() => SetIsLoading(false), 500)
+    }, []);
+    const classes = useStyles({darkMode});
     return( 
-        <div className={classes.container}>
-            <NavBar />
-            <FirstSection />
-            <SecondSection />
-        </div>        
+        <CookiesProvider>
+            <div className={classes.container}>
+                {isLoading?
+                    <CircularProgress className={classes.Loading}/>
+                :
+                <React.Fragment>
+                    <NavBar darkMode={darkMode} setCookie={setCookie}/>
+                    <FirstSection darkMode={darkMode}/>
+                    <SecondSection darkMode={darkMode}/>
+                </React.Fragment>
+                }
+            </div>  
+        </CookiesProvider>      
     )
 }

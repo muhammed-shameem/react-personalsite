@@ -5,8 +5,8 @@ const useStyles = makeStyles((theme) => ({
     containerStyle:{
         height: 40,
         width: '100%',
-        backgroundColor: "#e0e0de",
-        border: "2px solid #e0e0de",
+        backgroundColor:props=>props.darkMode? "#e0e0de":'#000000',
+        border: props=>props.darkMode?"2px solid #e0e0de":'2px solid #000000',
         borderRadius: 50,
         marginTop:20,
         [theme.breakpoints.down('sm')]:{
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         height: '100%',
         width:props => `${props.completed}%`,
         //backgroundColor:props => props.bgcolor,
-        backgroundColor:'#000000',
+        backgroundColor:props=>props.darkMode?'#000000':'#e0e0de',
         borderRadius: 'inherit',
         display:'flex',
         justifyContent:'space-between',
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     topicStyle:{
         paddingLeft: 10,
-        color: 'white',
+        color:props=>props.darkMode? 'white':'black',
         fontWeight: 'bold',
         [theme.breakpoints.down('sm')]:{
             fontSize:'10px'
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
     labelStyle:{
         padding: 5,
-        color: 'white',
+        color:props=>props.darkMode? 'white':'black',
         fontWeight: 'bold',
         [theme.breakpoints.down('sm')]:{
             fontSize:'10px'
@@ -44,8 +44,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SkillBar = (props) => {
-    const { skill, bgcolor, completed } = props;
-    const classes=useStyles({completed,bgcolor})
+    const { skill, bgcolor, completed,darkMode } = props;
+    const classes=useStyles({completed,bgcolor,darkMode})
     
   
     return (
