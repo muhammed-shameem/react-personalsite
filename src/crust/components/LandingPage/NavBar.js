@@ -9,6 +9,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Hidden from '@material-ui/core/Hidden';
 import Link from '@material-ui/core/Link';
+import {
+  DarkLiteModeSwitch
+} from '../../elements';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         position:'fixed',
         height:'64px',
         [theme.breakpoints.down('sm')]:{
-            backgroundColor:props =>props.open&&'#ffffff',
+            backgroundColor:props =>props.open&&'#28282B',
             height:props =>props.open?'260px':'56px',
         }
     }
@@ -50,13 +53,14 @@ const useStyles = makeStyles((theme) => ({
     width:'100%',
     display:'flex',
     flexDirection:'column',
-    color:'#000000',
+    color:'white',
+    backgroundColor:'#28282B',
   },
   toolBar:{
     [theme.breakpoints.down('xs')]:{
       flexDirection:'column',
       alignItems:'flex-start'
-    }
+    },
   }
 }));
 
@@ -77,16 +81,18 @@ export default function ButtonAppBar() {
                     onClick={toggleOpen}
                 >
                     {open?
-                      <CloseIcon />
+                      <CloseIcon style={{color:'white'}}/>
                       :
                       <MenuIcon className={classes.menuButton}/>
                     }
                 </IconButton>
+                <DarkLiteModeSwitch />
             </Hidden>
             <Hidden xsDown>
-                <Typography variant="h6" className={classes.title}>
+                {/* <Typography variant="h6" className={classes.title}>
                 محمّد شميم 
-                </Typography>
+                </Typography> */}
+                <DarkLiteModeSwitch />
                 <div className={classes.menus}>
                     <Button color="inherit">
                       <Link href='#home' color='inherit'>Home</Link>

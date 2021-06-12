@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     about:{
         fontFamily:'cursive',
         marginTop:'3%',
+        padding:10,
         [theme.breakpoints.down('sm')]:{
             fontSize:'0.7rem'
         }

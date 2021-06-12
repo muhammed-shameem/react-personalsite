@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     container:{
       display:'flex',
       flexDirection:'column',
-      width:'100%',
+      //width:'100%',
       minHeight:'100vh',
       position:'relative',
       backgroundColor: '#000000',

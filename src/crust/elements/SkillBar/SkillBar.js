@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
         height: 40,
         width: '100%',
         backgroundColor: "#e0e0de",
+        border: "2px solid #e0e0de",
         borderRadius: 50,
         marginTop:20,
         [theme.breakpoints.down('sm')]:{
@@ -16,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     fillerStyle:{
         height: '100%',
         width:props => `${props.completed}%`,
-        backgroundColor:props => props.bgcolor,
+        //backgroundColor:props => props.bgcolor,
+        backgroundColor:'#000000',
         borderRadius: 'inherit',
         display:'flex',
         justifyContent:'space-between',
