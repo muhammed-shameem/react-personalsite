@@ -9,10 +9,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import Link from '@material-ui/core/Link';
 import CoverPhoto from '../../../assets/images/map.jpg';
-import {
-  DownArrow,
-  TextAnimation
-} from '../../elements';
+
 
 const useStyles = makeStyles((theme) => ({
     container:{

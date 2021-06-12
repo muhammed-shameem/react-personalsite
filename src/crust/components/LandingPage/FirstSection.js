@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import CoverPhoto from '../../../assets/images/cover.png';
 import {
   DownArrow,
-  TextAnimation
 } from '../../elements';
 
 const useStyles = makeStyles((theme) => ({
